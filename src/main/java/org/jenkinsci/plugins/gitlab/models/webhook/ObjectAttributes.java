@@ -15,7 +15,6 @@ public class ObjectAttributes {
     public Integer source_project_id;
     public MergeRequestRepository source;
     public Commit last_commit;
-    public String title;
 
     @Override
     public String toString() {
@@ -23,7 +22,6 @@ public class ObjectAttributes {
                 "action='" + action + '\'' +
                 ", id=" + id +
                 ", iid=" + iid +
-                ", title='" + title + '\'' +
                 ", target_branch='" + target_branch + '\'' +
                 ", target_project_id=" + target_project_id +
                 ", target=" + target +

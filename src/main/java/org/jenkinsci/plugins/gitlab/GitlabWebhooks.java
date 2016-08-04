@@ -25,7 +25,6 @@ public class GitlabWebhooks implements UnprotectedRootAction {
 
     private static final Logger LOGGER = Logger.getLogger(GitlabWebhooks.class.getName());
     private static GitlabBuildTrigger trigger;
-    public static final String URLNAME = "gitlab-webhook";
 
     private Gson g = new GsonBuilder().setPrettyPrinting().create();
 
@@ -67,7 +66,6 @@ public class GitlabWebhooks implements UnprotectedRootAction {
                                 mergeRequest.object_attributes.source_branch,
                                 mergeRequest.object_attributes.target_branch,
                                 new HashMap<String, String>(),
-                                mergeRequest.object_attributes.title,
                                 "",
                                 mergeRequest.object_attributes.source_project_id,
                                 mergeRequest.object_attributes.target_project_id,
@@ -116,6 +114,6 @@ public class GitlabWebhooks implements UnprotectedRootAction {
 
     @Override
     public String getUrlName() {
-        return URLNAME;
+        return "gitlab-webhook";
     }
 }
